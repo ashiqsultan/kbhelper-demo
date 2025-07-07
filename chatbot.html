@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot - RagKB Integration</title>
+
+    <!-- Include React and ReactDOM from CDN (required for the IIFE build) -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+
+    <!-- Include your built CSS file -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="">
+      <!-- Container for the RagKB application -->
+      <div id="ragkb-div"></div>
+    </div>
+
+    <!-- Include your built JavaScript file -->
+    <script defer src="ragkb.iife.js"></script>
+
+    <!-- <script>
+      // Wait for the page to load
+      document.addEventListener('DOMContentLoaded', function () {
+        // Check if RagKB is available
+        if (typeof window.RagKB !== 'undefined') {
+          // Initialize the RagKB application
+          window.RagKB.init('ragkb-container');
+
+          // Remove loading indicator
+          const loadingElement = document.querySelector('.loading');
+          if (loadingElement) {
+            loadingElement.style.display = 'none';
+          }
+        } else {
+          // Handle error if RagKB is not loaded
+          const container = document.getElementById('ragkb-container');
+          container.innerHTML = `
+                    <div style="text-align: center; color: #666;">
+                        <h3>Error Loading Application</h3>
+                        <p>The RagKB application could not be loaded. Please check that the JavaScript file is accessible.</p>
+                        <p><strong>Expected file:</strong> ../dist/ragkb.iife.js</p>
+                    </div>
+                `;
+        }
+      });
+
+      // Alternative initialization method
+      window.addEventListener('load', function () {
+        // If RagKB is still not available after window load, try again
+        setTimeout(function () {
+          if (
+            typeof window.RagKB !== 'undefined' &&
+            !document.querySelector('#ragkb-container .loading')
+          ) {
+            window.RagKB.init('ragkb-container');
+          }
+        }, 1000);
+      });
+    </script> -->
+  </body>
+</html>
